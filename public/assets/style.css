@@ -1,0 +1,50 @@
+body{
+    margin: 1em;
+}
+
+.myCol{
+
+}
+
+.grey{
+    background-color: grey;
+}
+
+.darkGrey{
+    background-color: darkgray;
+}
+
+.novice{
+    background-color: darkgreen;
+}
+
+.intermediate{
+    background-color: darkgoldenrod;
+}
+
+.advanced{
+    background-color: darkred;
+}
+
+.open{
+    background-color: black;
+}
+
+.men{
+    background-color: blue;
+}
+
+.women{
+    background-color: purple;
+}
+
+.table-head{
+    color: white;
+}
+
+.table-data{
+    padding: 1em;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}

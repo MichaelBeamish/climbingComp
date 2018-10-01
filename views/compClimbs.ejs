@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title><%= comp.comp_name %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <a href="/competitions">Back</a>
+
+    <h1><%= comp.comp_name %></h1>
+
+    <hr>
+    <div class="container">
+    <a href="/competitions/climbs/<%= comp.id %>">Climbs</a>
+    <a href="/competitions/climbers/<%= comp.id %>">Climbers</a>
+    <hr>
+    
+        <div class="row">
+
+            <div class="myCol col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <h4><u>Novice:</u></h4>
+                <table>
+                    <tr class="novice table-head">
+                        <th class = "table-data">Climb</th>
+                        <th class = "table-data">Redpoint</th>
+                        <th class = "table-data">Flash</th>
+                    </tr>
+                <% for(let i = 0; i < climbs.length; i++) { %>
+                    <% let tableClass=""; %>
+                    <% if(i % 2 === 0) { %>
+                        <% tableClass = "darkGrey"; %>
+                    <% } else { %>
+                        <% tableClass = "grey"; %>
+                    <% } %>
+                    <% if(climbs[i].climb_category === 'Novice'){ %>
+                        <tr class=<%=`${tableClass}`%>>
+                            <td class = "table-data"><a href="/climb/<%= climbs[i].id %>"><%= climbs[i].climb_name %></a></td>
+                            <td class = "table-data"><%= climbs[i].red_points %></td>
+                            <td class = "table-data"><%= climbs[i].flash_points %></td>
+                        </tr>
+                    <% } %>    
+                <% } %>
+                </table>
+            </div>
+            
+            <div class="myCol col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <h4><u>Intermediate:</u></h4>
+                <table>
+                    <tr class="intermediate table-head">
+                        <th class = "table-data">Climb</th>
+                        <th class = "table-data">Redpoint</th>
+                        <th class = "table-data">Flash</th>
+                    </tr>
+                <% for(let i = 0; i < climbs.length; i++) { %>
+                    <% let tableClass=""; %>
+                    <% if(i % 2 === 0) { %>
+                        <% tableClass = "darkGrey"; %>
+                    <% } else { %>
+                        <% tableClass = "grey"; %>
+                    <% } %>
+                    <% if(climbs[i].climb_category === 'Intermediate'){ %>
+                        <tr class=<%=`${tableClass}`%>>
+                            <td class = "table-data"><%= climbs[i].climb_name %></td>
+                            <td class = "table-data"><%= climbs[i].red_points %></td>
+                            <td class = "table-data"><%= climbs[i].flash_points %></td>
+                        </tr>
+                    <% } %>    
+                <% } %>
+                </table>
+            </div>
+            
+            <div class="myCol col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <h4><u>Advanced:</u></h4>
+                <table>
+                    <tr class="advanced table-head">
+                        <th class = "table-data">Climb</th>
+                        <th class = "table-data">Redpoint</th>
+                        <th class = "table-data">Flash</th>
+                    </tr>
+                <% for(let i = 0; i < climbs.length; i++) { %>
+                    <% let tableClass=""; %>
+                    <% if(i % 2 === 0) { %>
+                        <% tableClass = "darkGrey"; %>
+                    <% } else { %>
+                        <% tableClass = "grey"; %>
+                    <% } %>
+                    <% if(climbs[i].climb_category === 'Advanced'){ %>
+                        <tr class=<%=`${tableClass}`%>>
+                            <td class = "table-data"><%= climbs[i].climb_name %></td>
+                            <td class = "table-data"><%= climbs[i].red_points %></td>
+                            <td class = "table-data"><%= climbs[i].flash_points %></td>
+                        </tr>
+                    <% } %>    
+                <% } %>
+                </table>
+            </div>
+            
+            <div class="myCol col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <h4><u>Open:</u></h4>
+                <table>
+                    <tr class="open table-head">
+                        <th class = "table-data">Climb</th>
+                        <th class = "table-data">Redpoint</th>
+                        <th class = "table-data">Flash</th>
+                    </tr>
+                <% for(let i = 0; i < climbs.length; i++) { %>
+                    <% let tableClass=""; %>
+                    <% if(i % 2 === 0) { %>
+                        <% tableClass = "darkGrey"; %>
+                    <% } else { %>
+                        <% tableClass = "grey"; %>
+                    <% } %>
+                    <% if(climbs[i].climb_category === 'Open'){ %>
+                        <tr class=<%=`${tableClass}`%>>
+                            <td class = "table-data"><%= climbs[i].climb_name %></td>
+                            <td class = "table-data"><%= climbs[i].red_points %></td>
+                            <td class = "table-data"><%= climbs[i].flash_points %></td>
+                        </tr>
+                    <% } %>    
+                <% } %>
+                </table>
+            </div>            
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

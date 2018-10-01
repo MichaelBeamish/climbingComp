@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+</head>
+<body>
+    <a href="/">Home</a>
+
+    <h1>Climbing Competitions</h1>
+
+    <h3>Create New Competition</h3>
+    <form action="/competitions" method="post">
+        <input type="text" name="comp_name" placeholder="Enter name of comp." required>
+        <input type="submit" value="Create">
+    </form>
+
+    <hr>
+    <h3>Existing Competitions</h3>
+    <div>
+        <% for(let i = 0; i < competitions.length; i++) { %>
+            <div>
+                <a href="/competitions/climbs/<%= competitions[i].id %>"><%= competitions[i].comp_name %></a>
+            </div>    
+        <% } %>
+    </div>
+
+ 
+</body>
+</html>
